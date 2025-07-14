@@ -59,7 +59,7 @@ function getSelectedProducts() {
     return Array.from(productCheckboxes).map(cb => cb.nextElementSibling.textContent).join(', ') || 'Ningún producto seleccionado';
 }
 
-// Función para formatear los nombres de los campos (que estaba faltando)
+// Función para formatear los nombres de los campos
 function formatFieldName(key) {
     const fieldNames = {
         'nombres': 'Nombres',
