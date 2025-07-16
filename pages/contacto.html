@@ -11,6 +11,7 @@
     <link rel="icon" href="https://TamayoEdu.github.io/TallerDos/img/cocoa_icon.png">
     <!--ENLACE MIS ESTILOS-->
     <link rel="stylesheet" href="https://TamayoEdu.github.io/TallerDos/css/styles.css">
+    <link rel="stylesheet" href="/css/contacto.css">
     <title>Contacto</title>
 </head>
 
@@ -102,12 +103,14 @@
                         <input type="text" id="nombres"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                             placeholder="Juan Carlos" required>
+                            <p id="errorNombre" class="error"></p>
                     </div>
                     <div>
                         <label for="apellidos" class="block mb-2 text-sm font-medium text-gray-900">Apellidos</label>
                         <input type="text" id="apellidos"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                             placeholder="Pérez González" required>
+                            <p id="errorApellido" class="error"></p>
                     </div>
                 </div>
 
@@ -117,6 +120,7 @@
                     <input type="email" id="email"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                         placeholder="nombre@email.com" required>
+                        <p id="errorEmail" class="error"></p>
                 </div>
 
                 <!--Campo 3: Teléfono-->
@@ -124,63 +128,36 @@
                     <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Teléfono/Celular</label>
                     <input type="tel" id="phone"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-                        placeholder="+593 99 999 9999" pattern="[0-9+]{10,15}" required>
+                        placeholder="0999999999" required>
+                        <p id="errorTelefono" class="error"></p>
                 </div>
 
-                <!--Campo 4: Tipo de consulta (select -->
+                <!--Campo 4: Codigo postal-->
                 <div>
-                    <label for="query-type" class="block mb-2 text-sm font-medium text-gray-900">Tipo de
-                        consulta</label>
-                    <select id="query-type"
+                    <label for="codigo-postal" class="block mb-2 text-sm font-medium text-gray-900">Código Postal</label>
+                    <input type="text" id="codigo-postal" name="codigo-postal"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                        placeholder="123456" required>
+                    <p id="errorCodigoPostal" class="error"></p>
+                </div>
+
+                <!--Campo 5: Pais -->
+                <div class="mb-4">
+                    <label for="pais" class="block mb-2 text-sm font-medium text-gray-900">País</label>
+                    <input type="text" id="pais" name="pais"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                        placeholder="Ecuador" required>
+                    <span id="errorPais" class="error"></span>
+                </div>
+
+                <!--Campo 6: Fecha de nacimiento-->
+                <div class="mb-4">
+                    <label for="fecha-nacimiento" class="block mb-2 text-sm font-medium text-gray-900">Fecha de
+                        Nacimiento</label>
+                    <input type="date" id="fecha-nacimiento" name="fecha-nacimiento"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                         required>
-                        <option value="" disabled selected>Seleccione una opción</option>
-                        <option value="productos">Información de productos</option>
-                        <option value="mayorista">Compra al por mayor</option>
-                        <option value="distribucion">Oportunidades de distribución</option>
-                        <option value="otros">Otros</option>
-                    </select>
-                </div>
-
-                <!--Campo 5: Productos de interés-->
-                <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900">Productos de interés</label>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="flex items-center">
-                            <input id="cacao-grano" type="checkbox" value="Cacao en grano"
-                                class="product-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="cacao-grano" class="ml-2 text-sm text-gray-900">Cacao en grano</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="chocolate" type="checkbox" value="Chocolate"
-                                class="product-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="chocolate" class="ml-2 text-sm text-gray-900">Chocolate</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="nibs" type="checkbox" value="Nibs de cacao"
-                                class="product-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="nibs" class="ml-2 text-sm text-gray-900">Nibs de cacao</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="polvo" type="checkbox" value="Polvo de cacao"
-                                class="product-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="polvo" class="ml-2 text-sm text-gray-900">Polvo de cacao</label>
-                        </div>
-                        <div class="flex items-center">
-                            <input id="otro" type="checkbox" value="Otro producto"
-                                class="product-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                            <label for="otro" class="ml-2 text-sm text-gray-900">Otro</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Campo 6: Cantidad estimada-->
-                <div>
-                    <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900">Cantidad estimada
-                        (kg/unidades)</label>
-                    <input type="number" id="quantity" min="1"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
-                        placeholder="Ej: 100">
+                    <p id="errorFechaNacimiento" class="error"></p>
                 </div>
 
                 <!--Campo 7: Mensaje-->
@@ -189,14 +166,16 @@
                     <textarea id="message" rows="4"
                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                         placeholder="Describe tu consulta en detalle..." required></textarea>
+                        <p id="errorMensaje" class="error"></p>
                 </div>
 
                 <!--Boton de enviar-->
                 <button type="submit"
-                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4">Enviar
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-4" id="botonEnviar" disabled>Enviar
                     mensaje</button>
             </form>
         </div>
+        <p id="registroExitoso"></p>
     </section>
 
     <!--IMPRIMIR TABLA-->
@@ -216,6 +195,7 @@
             </table>
         </div>
     </div>
+    
     <!--TITULO CONTACTO-->
     <h2 class="titulo-contacto"><strong><em>¿Tienes preguntas?</em></strong></h2>
 
@@ -379,7 +359,7 @@
         </div>
     </footer>
     <!--SCRIPT-->
-    <script src="https://TamayoEdu.github.io/TallerDos/js/index.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 
 </html>
