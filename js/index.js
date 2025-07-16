@@ -330,18 +330,9 @@ const generarTabla = () => {
 };
 
 // Manejar el envío del formulario
-formContacto.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (validarFormulario()) {
-        generarTabla();
-        enviarFormulario();
-    }
-});
-
-// Validar el formulario inicialmente
-// Manejar el envío del formulario
 formContacto.addEventListener('submit', function (e) {
     e.preventDefault();
+
 
     // Validar todos los campos nuevamente
     const esValido = validarNombre() &&
@@ -387,4 +378,21 @@ formContacto.addEventListener('submit', function (e) {
     }
 });
 
+// Manejar el envío del formulario
 validarFormulario();
+
+// Función para formatear los nombres de los campos
+function formatFieldName(key) {
+    const fieldNames = {
+        'nombres': 'Nombres',
+        'apellidos': 'Apellidos',
+        'email': 'Correo electrónico',
+        'telefono': 'Teléfono/Celular',
+        'consulta': 'Tipo de consulta',
+        'productos': 'Productos de interés',
+        'cantidad': 'Cantidad estimada',
+        'mensaje': 'Mensaje'
+    };
+    return fieldNames[key] || key;
+}
+
